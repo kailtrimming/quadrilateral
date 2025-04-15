@@ -1,25 +1,25 @@
 /*! \file CRectangle.h
 	\brief Declaration of the class Rectangle
 	\author Kail Trimming
-	
+	The `Rectangle` class manages a geometric object with the shape of a rectangle, 
+	providing methods for setting and retrieving dimensions,
+	handling text labels, calculating area and perimeter, and debugging functionalities.
 */
-
 
 #ifndef RECTANGLE_H
 #define RECTANGLE_H
 
+#include<iostream>
 
+#include "CQuadrilateral.h"
 
+using namespace std;
 
 /// @class Rectangle
 /// @brief to manage an object with the shape of a rectangle
-class Rectangle 
+class Rectangle : public Quadrilateral
 {
-private:
-	float height;
-	float width;
-	
-	char* text;
+protected:
 	
 
 public:
@@ -39,7 +39,6 @@ public:
 	bool operator==(const Rectangle &r);
 	/// @}
 	
-	
 	/// @name BASIC HANDLING
 	/// @{
 	void Init();												
@@ -52,24 +51,18 @@ public:
 	/// @{
 	void SetHeight(float h);
 	void SetWidth(float w);
-	void SetDim(float w, float h); 
+	void SetDim(float w, float h);
 	
-	void SetText(const char* string);
-		
 	void GetDim(float &w, float &h);
 	float GetHeight();
 	float GetWidth(); 
-	float GetPerimeter(); 
-	float GetArea();
 	
-	void GetText(char* string);
+	float GetArea();
 	/// @}
 	
 	
 	/// @name DEBUG and SERIALIZATION 
 	/// @{
-	void ErrorMessage(const char *string); 
-	void WarningMessage(const char *string);
 	void Dump();
 	/// @}
 		
