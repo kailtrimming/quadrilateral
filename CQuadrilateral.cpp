@@ -207,6 +207,9 @@ void Quadrilateral::WarningMessage(const char *string) {
 
 /// @brief for debugging: all about the object
 void Quadrilateral::Dump() {
+	cout << endl;
+	cout << "---Rectangle---" << endl;
+	cout << endl;
 	
 	cout << endl;
 	cout << "Reference point on the grid: " << gridCoord.x << "," << gridCoord.y << endl; 
